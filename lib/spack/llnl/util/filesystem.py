@@ -336,6 +336,8 @@ def copy_mode(src, dest):
         dest_mode |= stat.S_IXGRP
     if src_mode & stat.S_IXOTH:
         dest_mode |= stat.S_IXOTH
+    if src_mode & stat.S_IWGRP:      
+        dest_mode |= stat.S_IWGRP
     os.chmod(dest, dest_mode)
 
 
